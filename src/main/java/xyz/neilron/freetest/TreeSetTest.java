@@ -7,6 +7,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 /**
  * Created by Neil on 2016/10/13.
+ * TreeSet Test.
  */
 
 class Song {
@@ -14,16 +15,16 @@ class Song {
     private String name;
     private int score;
 
-    public Song(String name, int score) {
+    Song(String name, int score) {
         this.name = name;
         this.score = score;
     }
 
-    public void setScore(int score) {
+    void setScore(int score) {
         this.score = score;
     }
 
-    public int getScore() {
+    int getScore() {
         return score;
     }
 
