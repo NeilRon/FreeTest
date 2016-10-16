@@ -15,9 +15,9 @@ class Song {
     private String name;
     private int score;
 
-    Song(String name, int score) {
+    Song(String name) {
         this.name = name;
-        this.score = score;
+        this.score = 3;
     }
 
     void setScore(int score) {
@@ -48,12 +48,12 @@ public class TreeSetTest {
         HashSet<Song> hashSet = new HashSet<Song>();
         TreeSet<Song> treeSet = new TreeSet<Song>(new Comparator<Song>() {
             public int compare(Song o1, Song o2) {
-                return o1.getScore() - o2.getScore();
+                return o2.getScore() - o1.getScore();
             }
         });
 
-        Song song1 = new Song("Faded", 5);
-        Song song2 = new Song("Poker Face", 5);
+        Song song1 = new Song("前世情人");
+        Song song2 = new Song("床边故事");
 
         treeSet.add(song1);
         treeSet.add(song2);
@@ -65,7 +65,7 @@ public class TreeSetTest {
             System.out.println(song);
         }
 
-        System.out.println("HashSet Result:");
+        System.out.println("\nHashSet Result:");
         for (Song song : hashSet){
             System.out.println(song);
         }
@@ -74,7 +74,10 @@ public class TreeSetTest {
 
         treeSet.add(song2);
 
-
+        System.out.println("\nTreeSet Result After setScore:");
+        for (Song song : treeSet){
+            System.out.println(song);
+        }
 
     }
 }
